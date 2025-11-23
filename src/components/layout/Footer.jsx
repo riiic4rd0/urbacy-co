@@ -7,9 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">
-                U
-              </div>
+              <img 
+                src="/assets/UrbacyLogo-Blue.png" 
+                alt="Urbacy Co. Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-bold text-xl">Urbacy Co.</span>
             </div>
             <p className="text-gray-400 text-sm">
