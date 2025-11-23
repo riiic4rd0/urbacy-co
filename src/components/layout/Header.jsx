@@ -33,9 +33,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">
-              U
-            </div>
+            <img 
+              src="/assets/UrbacyLogo-Blue.png" 
+              alt="Urbacy Co. Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="font-bold text-xl">Urbacy Co.</span>
           </Link>
 
