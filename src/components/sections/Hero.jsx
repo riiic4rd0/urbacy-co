@@ -22,7 +22,7 @@ const Hero = ({ onNavigate }) => {
   return (
     <>
       {/* Logo-Section - Fixiert und verschwindet */}
-      <section className="h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="h-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 right-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-gray-900 to-purple-900/20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(30,136,229,0.15),transparent_50%)]" />
         
@@ -40,17 +40,17 @@ const Hero = ({ onNavigate }) => {
           />
         </div>
 
-        {/* Scroll-Indikator */}
+        {/* Scroll-Indikator - Komplett zentriert */}
         <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce transition-opacity duration-300"
+          className="absolute bottom-8 left-0 right-0 w-full transition-opacity duration-300"
           style={{
             opacity: logoOpacity
           }}
         >
-          <div className="flex flex-col items-center gap-2 text-gray-400">
-            <span className="text-sm">Scrollen Sie nach unten</span>
+          <div className="flex flex-col items-center justify-center gap-2 text-gray-400 mx-auto w-full">
+            <span className="text-sm text-center">Scrollen Sie nach unten</span>
             <svg 
-              className="w-6 h-6" 
+              className="w-6 h-6 mx-auto animate-bounce" 
               fill="none" 
               strokeLinecap="round" 
               strokeLinejoin="round" 
@@ -64,11 +64,15 @@ const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Content-Section - Schiebt sich von unten hoch */}
+      {/* Spacer für die fixierte Logo-Section */}
+      <div className="h-screen" />
+
+      {/* Content-Section - Schiebt sich von unten hoch, nahtloser Übergang */}
       <section 
-        className="min-h-screen flex items-center justify-center relative bg-gray-900"
+        className="min-h-screen flex items-center justify-center relative z-10"
         style={{
-          transform: `translateY(${contentTranslateY}px)`,
+          background: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgb(17, 24, 39), rgba(88, 28, 135, 0.2))',
+          transform: `translateY(${contentTranslateY}px)`
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-gray-900 to-purple-900/20" />
