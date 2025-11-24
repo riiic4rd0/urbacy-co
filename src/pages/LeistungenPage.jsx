@@ -11,7 +11,7 @@ const LeistungenPage = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">Detaillierte Leistungsbeschreibung</h2>
             
             <div className="space-y-8">
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+              <div id="data-act" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
                 <h3 className="text-2xl font-bold mb-4 text-blue-400">Data Act Readiness</h3>
                 <p className="text-gray-300 mb-4">
                   Der EU Data Act tritt 2025 in Kraft und verpflichtet Unternehmen, Daten strukturiert und sicher zu verwalten. 
@@ -22,10 +22,11 @@ const LeistungenPage = () => {
                   <li>Gap-Analyse zur Identifikation von Handlungsfeldern</li>
                   <li>Erstellung einer individuellen Compliance-Roadmap</li>
                   <li>Handlungsempfehlungen als strukturierter PDF-Report</li>
+                  <li>60-minütiger Beratungscall mit unseren Experten</li>
                 </ul>
               </div>
 
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+              <div id="dsgvo" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
                 <h3 className="text-2xl font-bold mb-4 text-blue-400">DSGVO & Datenschutz</h3>
                 <p className="text-gray-300 mb-4">
                   Die DSGVO ist seit 2018 in Kraft, doch viele Unternehmen haben noch Nachholbedarf. Wir sorgen für vollständige Compliance.
@@ -35,10 +36,12 @@ const LeistungenPage = () => {
                   <li>Erstellung/Prüfung des Verzeichnisses von Verarbeitungstätigkeiten (VVT)</li>
                   <li>Durchführung von Datenschutz-Folgenabschätzungen (DSFA)</li>
                   <li>Auftragsverarbeitungsverträge (AVV) mit Dienstleistern</li>
+                  <li>Technische und organisatorische Maßnahmen (TOM)</li>
+                  <li>Schulung Ihrer Mitarbeiter im Datenschutz</li>
                 </ul>
               </div>
 
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+              <div id="ki-integration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
                 <h3 className="text-2xl font-bold mb-4 text-blue-400">KI-Integration</h3>
                 <p className="text-gray-300 mb-4">
                   Künstliche Intelligenz bietet enormes Potenzial – muss aber rechtssicher und datenschutzkonform eingesetzt werden.
@@ -48,6 +51,25 @@ const LeistungenPage = () => {
                   <li>Compliance-Check Ihrer geplanten KI-Systeme</li>
                   <li>Integration in bestehende Workflows</li>
                   <li>Aufbau einer KI-Governance-Struktur</li>
+                  <li>Rechtssichere Dokumentation des KI-Einsatzes</li>
+                  <li>Schulung Ihrer Teams im Umgang mit KI-Tools</li>
+                </ul>
+              </div>
+
+              <div id="managed-services" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
+                <h3 className="text-2xl font-bold mb-4 text-blue-400">Managed Services</h3>
+                <p className="text-gray-300 mb-4">
+                  Compliance ist kein einmaliges Projekt, sondern ein kontinuierlicher Prozess. 
+                  Wir begleiten Sie dauerhaft und sorgen für nachhaltige Rechtssicherheit.
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-400">
+                  <li>Monatliche Compliance-Checks und Statusreports</li>
+                  <li>Kontinuierliches Gesetzesänderungs-Monitoring</li>
+                  <li>Incident-Response Support bei Datenschutzvorfällen</li>
+                  <li>Persönlicher Compliance-Berater als fester Ansprechpartner</li>
+                  <li>Proaktive Risikoerkennung und Handlungsempfehlungen</li>
+                  <li>Regelmäßige Updates zu neuen EU-Regularien</li>
+                  <li>Vorbereitung auf Audits und Behördenanfragen</li>
                 </ul>
               </div>
             </div>

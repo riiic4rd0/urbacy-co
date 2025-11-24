@@ -9,15 +9,9 @@ const About = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <button
-            onClick={() => navigate('/ueber-uns')}
-            className="inline-block group mb-6"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:text-blue-400 transition-colors duration-300">
-              Warum Urbacy Co.?
-              <span className="inline-block ml-2 transform group-hover:translate-x-2 transition-transform duration-300">→</span>
-            </h2>
-          </button>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Warum Urbacy Co.?
+          </h2>
           
           <p className="text-xl text-gray-300 mb-12">
             Urbacy Co. verbindet technisches Know-how und rechtliche Sensibilität. 

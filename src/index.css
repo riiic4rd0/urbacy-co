@@ -2,6 +2,22 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  * {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body, #root {
+    @apply bg-gray-900;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 @layer utilities {
   ::-webkit-scrollbar {
     width: 10px;
@@ -18,12 +34,6 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #6b7280;
-  }
-}
-
-@layer base {
-  * {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900;
   }
 }
 

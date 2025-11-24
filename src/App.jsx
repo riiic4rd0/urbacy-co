@@ -12,6 +12,7 @@ const KontaktPage = lazy(() => import('./pages/KontaktPage'));
 const UeberUnsPage = lazy(() => import('./pages/UeberUnsPage'));
 const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
 const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
+const AGBPage = lazy(() => import('./pages/AGBPage'));
 
 const LoadingSpinner = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-900">
@@ -34,6 +35,7 @@ function App() {
             <Route path="/ueber-uns" element={<UeberUnsPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
+            <Route path="/agb" element={<AGBPage />} />
           </Routes>
         </Suspense>
         <Footer />

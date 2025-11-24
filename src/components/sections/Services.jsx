@@ -125,12 +125,18 @@ const Services = () => {
 
   const ServiceModal = ({ service, onClose }) => (
     <div 
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
       onClick={onClose}
+      style={{
+        animation: 'fadeIn 0.3s ease-out'
+      }}
     >
       <div 
-        className="bg-gray-900 border-2 border-blue-500 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-gray-900 border-2 border-blue-500 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-slideUp"
         onClick={(e) => e.stopPropagation()}
+        style={{
+          animation: 'slideUp 0.4s ease-out'
+        }}
       >
         <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 flex items-start justify-between">
           <div className="flex items-center gap-4">
@@ -242,6 +248,28 @@ const Services = () => {
           onClose={() => setSelectedService(null)} 
         />
       )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            transform: translateY(50px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </>
   );
 };
