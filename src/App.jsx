@@ -8,6 +8,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const LeistungenPage = lazy(() => import('./pages/LeistungenPage'));
 const PreisePage = lazy(() => import('./pages/PreisePage'));
 const KontaktPage = lazy(() => import('./pages/KontaktPage'));
+const UeberUnsPage = lazy(() => import('./pages/UeberUnsPage'));
 const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
 const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/leistungen" element={<LeistungenPage />} />
             <Route path="/preise" element={<PreisePage />} />
             <Route path="/kontakt" element={<KontaktPage />} />
+            <Route path="/ueber-uns" element={<UeberUnsPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
           </Routes>

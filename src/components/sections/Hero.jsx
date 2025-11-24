@@ -21,7 +21,7 @@ const Hero = ({ onNavigate }) => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Wir begleiten KMU, Selbstständige und Dienstleister bei der Integration von KI und der Umsetzung von Data Act & DSGVO
+            Wir begleiten Sie bei der Integration von KI und der Umsetzung von Data Act & DSGVO
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
