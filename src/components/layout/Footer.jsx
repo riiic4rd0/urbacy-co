@@ -22,19 +22,47 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-blue-400">Leistungen</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="hover:text-white cursor-pointer transition-colors">Data Act Readiness</li>
-              <li className="hover:text-white cursor-pointer transition-colors">DSGVO-Compliance</li>
-              <li className="hover:text-white cursor-pointer transition-colors">KI-Integration</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Managed Services</li>
+              <li>
+                <Link to="/leistungen" className="hover:text-white transition-colors">
+                  Data Act Readiness
+                </Link>
+              </li>
+              <li>
+                <Link to="/leistungen" className="hover:text-white transition-colors">
+                  DSGVO-Compliance
+                </Link>
+              </li>
+              <li>
+                <Link to="/leistungen" className="hover:text-white transition-colors">
+                  KI-Integration
+                </Link>
+              </li>
+              <li>
+                <Link to="/leistungen" className="hover:text-white transition-colors">
+                  Managed Services
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-bold mb-4 text-blue-400">Unternehmen</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="hover:text-white cursor-pointer transition-colors">Über uns</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Karriere</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Blog</li>
+              <li>
+                <Link to="/ueber-uns" className="hover:text-white transition-colors">
+                  Über uns
+                </Link>
+              </li>
+              <li>
+                <Link to="/kontakt" className="hover:text-white transition-colors">
+                  Karriere
+                </Link>
+              </li>
+              <li>
+                <Link to="/kontakt" className="hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -51,7 +79,11 @@ const Footer = () => {
                   Datenschutz
                 </Link>
               </li>
-              <li className="hover:text-white cursor-pointer transition-colors">AGB</li>
+              <li>
+                <Link to="/kontakt" className="hover:text-white transition-colors">
+                  AGB
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

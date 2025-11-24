@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import CookieBanner from './components/layout/CookieBanner';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const LeistungenPage = lazy(() => import('./pages/LeistungenPage'));
@@ -21,6 +22,7 @@ const LoadingSpinner = () => (
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-gray-900 text-white">
         <Header />
         <Suspense fallback={<LoadingSpinner />}>
