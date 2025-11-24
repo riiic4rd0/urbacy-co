@@ -9,7 +9,7 @@ const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant' // 'smooth' für sanftes Scrollen, 'instant' für sofortiges
+      behavior: 'smooth' // 'smooth' für sanftes Scrollen, 'instant' für sofortiges
     });
   }, [pathname]);
 

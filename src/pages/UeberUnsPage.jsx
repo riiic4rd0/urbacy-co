@@ -37,9 +37,7 @@ const UeberUnsPage = () => {
   ];
 
   const milestones = [
-    { year: '2023', event: 'Gründung von Urbacy Co.' },
-    { year: '2024', event: 'Erste Enterprise-Kunden gewonnen' },
-    { year: '2025', event: 'Expansion: Data Act Readiness Services' },
+    { year: '2025', event: 'Gründung von Urbacy Co.' },
     { year: '2025+', event: 'Vision: Führender Anbieter für KI-Compliance' }
   ];
 
