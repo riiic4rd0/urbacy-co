@@ -3,14 +3,6 @@ import Packages from '../components/sections/Packages';
 const PreisePage = () => {
   return (
     <main className="pt-16">
-      <div className="bg-gradient-to-b from-gray-900 to-gray-800 py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Unsere Pakete</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Transparente Preise für jede Unternehmensgröße
-          </p>
-        </div>
-      </div>
       <Packages />
       
       <section className="py-24 bg-gray-900">
