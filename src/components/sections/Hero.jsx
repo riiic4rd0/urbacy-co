@@ -18,51 +18,56 @@ const Hero = ({ onNavigate }) => {
   
   // Content schiebt sich von unten nach oben
   const contentTranslateY = Math.max(0, window.innerHeight - scrollY);
+  
+  // Logo-Section wird unsichtbar und deaktiviert nach dem Scrollen
+  const logoSectionVisible = scrollY < window.innerHeight * 1.5;
 
   return (
     <>
-      {/* Logo-Section - Fixiert und verschwindet */}
-      <section className="h-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 right-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-gray-900 to-purple-900/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(30,136,229,0.15),transparent_50%)]" />
-        
-        {/* Nur das Logo - ohne Text */}
-        <div 
-          className="relative z-10 transition-opacity duration-300"
-          style={{
-            opacity: logoOpacity,
-          }}
-        >
-          <img 
-            src="/assets/UrbacyLogo-Blue.png" 
-            alt="Urbacy Co." 
-            className="w-64 h-64 md:w-96 md:h-96 object-contain drop-shadow-2xl"
-          />
-        </div>
-
-        {/* Scroll-Indikator - Komplett zentriert */}
-        <div 
-          className="absolute bottom-8 left-0 right-0 w-full transition-opacity duration-300"
-          style={{
-            opacity: logoOpacity
-          }}
-        >
-          <div className="flex flex-col items-center justify-center gap-2 text-gray-400 mx-auto w-full">
-            <span className="text-sm text-center">Scrollen Sie nach unten</span>
-            <svg 
-              className="w-6 h-6 mx-auto animate-bounce" 
-              fill="none" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth="2" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+      {/* Logo-Section - Fixiert und verschwindet, wird komplett deaktiviert */}
+      {logoSectionVisible && (
+        <section className="h-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 right-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-gray-900 to-purple-900/20" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(30,136,229,0.15),transparent_50%)]" />
+          
+          {/* Nur das Logo - ohne Text */}
+          <div 
+            className="relative z-10 transition-opacity duration-300"
+            style={{
+              opacity: logoOpacity,
+            }}
+          >
+            <img 
+              src="/assets/UrbacyLogo-Blue.png" 
+              alt="Urbacy Co." 
+              className="w-64 h-64 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+            />
           </div>
-        </div>
-      </section>
+
+          {/* Scroll-Indikator - Komplett zentriert */}
+          <div 
+            className="absolute bottom-8 left-0 right-0 w-full transition-opacity duration-300"
+            style={{
+              opacity: logoOpacity
+            }}
+          >
+            <div className="flex flex-col items-center justify-center gap-2 text-gray-400 mx-auto w-full">
+              <span className="text-sm text-center">Scrollen Sie nach unten</span>
+              <svg 
+                className="w-6 h-6 mx-auto animate-bounce" 
+                fill="none" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth="2" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Spacer für die fixierte Logo-Section */}
       <div className="h-screen" />
