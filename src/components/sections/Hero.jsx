@@ -74,9 +74,8 @@ const Hero = ({ onNavigate }) => {
 
       {/* Content-Section - Schiebt sich von unten hoch, nahtloser Übergang */}
       <section 
-        className="min-h-screen flex items-center justify-center relative z-10"
+        className="min-h-screen flex items-center justify-center relative z-10 bg-gray-900"
         style={{
-          background: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgb(17, 24, 39), rgba(88, 28, 135, 0.2))',
           transform: `translateY(${contentTranslateY}px)`
         }}
       >
