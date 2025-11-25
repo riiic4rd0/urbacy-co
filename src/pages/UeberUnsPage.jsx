@@ -36,22 +36,22 @@ const UeberUnsPage = () => {
 
   const values = [
     {
-      icon: <Shield size={40} />,
+      icon: Shield,
       title: 'Rechtssicherheit',
       description: 'DSGVO- und Data-Act-konforme Lösungen, die rechtlich abgesichert sind und Ihnen maximalen Schutz bieten.'
     },
     {
-      icon: <Target size={40} />,
+      icon: Target,
       title: 'Praxisnähe',
       description: 'Keine theoretischen Konzepte, sondern umsetzbare Lösungen, die in Ihren Arbeitsalltag passen.'
     },
     {
-      icon: <Users size={40} />,
+      icon: Users,
       title: 'Partnerschaft',
       description: 'Wir sehen uns als Ihr langfristiger Partner, nicht nur als Dienstleister für einmalige Projekte.'
     },
     {
-      icon: <Lightbulb size={40} />,
+      icon: Lightbulb,
       title: 'Innovation',
       description: 'Wir nutzen modernste Technologien wie KI und Automatisierung für maximale Effizienz.'
     }
