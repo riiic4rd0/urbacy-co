@@ -1,14 +1,43 @@
-import { useState } from 'react';
-import { X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Database, Shield, Bot, Settings, BookOpen, Link2 } from 'lucide-react';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) return; // Nur auf Mobile
+
+      const cards = document.querySelectorAll('.service-card');
+      const windowCenter = window.innerHeight / 2;
+      let closestIndex = -1;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - windowCenter);
+
+        if (distance < closestDistance && rect.top < windowCenter && rect.bottom > windowCenter) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const services = [
     {
       title: 'Data Act Readiness',
       description: 'Bereiten Sie Ihr Unternehmen optimal auf die EU-Vorgaben vor',
-      icon: '📊',
+      icon: Database,
       details: {
         intro: 'Der EU Data Act tritt 2025 in Kraft und verpflichtet Unternehmen, Daten strukturiert und sicher zu verwalten. Wir bereiten Sie optimal darauf vor.',
         features: [
@@ -29,7 +58,7 @@ const Services = () => {
     {
       title: 'DSGVO & Datenschutz',
       description: 'Vollständige datenschutzrechtliche Absicherung',
-      icon: '🔒',
+      icon: Shield,
       details: {
         intro: 'Die DSGVO ist seit 2018 in Kraft, doch viele Unternehmen haben noch Nachholbedarf. Wir sorgen für vollständige Compliance.',
         features: [
@@ -50,7 +79,7 @@ const Services = () => {
     {
       title: 'KI-Integration',
       description: 'Rechtssichere Integration moderner KI-Systeme',
-      icon: '🤖',
+      icon: Bot,
       details: {
         intro: 'Künstliche Intelligenz bietet enormes Potenzial – muss aber rechtssicher und datenschutzkonform eingesetzt werden.',
         features: [
@@ -71,7 +100,7 @@ const Services = () => {
     {
       title: 'Managed Compliance',
       description: 'Laufende Compliance-Betreuung und Monitoring',
-      icon: '⚙️',
+      icon: Settings,
       details: {
         intro: 'Compliance ist kein einmaliges Projekt, sondern ein kontinuierlicher Prozess. Wir begleiten Sie dauerhaft.',
         features: [
@@ -92,13 +121,13 @@ const Services = () => {
     {
       title: 'Workshops & Schulung',
       description: 'Bald verfügbar',
-      icon: '📚',
+      icon: BookOpen,
       comingSoon: true
     },
     {
       title: 'Automatisierung & APIs',
       description: 'Integration von GPT, Twilio, Make.com & mehr',
-      icon: '🔗',
+      icon: Link2,
       details: {
         intro: 'Automatisieren Sie wiederkehrende Prozesse und integrieren Sie moderne APIs für maximale Effizienz.',
         features: [
@@ -212,32 +241,49 @@ const Services = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                onClick={() => handleServiceClick(service)}
-                className={`group bg-gray-900/50 border border-gray-700 rounded-xl p-6 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl ${
-                  service.comingSoon 
-                    ? 'opacity-60 cursor-not-allowed' 
-                    : 'hover:border-blue-500 hover:shadow-blue-500/20 cursor-pointer'
-                }`}
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className={`text-xl font-bold mb-3 transition-colors ${
-                  service.comingSoon ? 'text-gray-400' : 'group-hover:text-blue-400'
-                }`}>
-                  {service.title}
-                </h3>
-                <p className="text-gray-400">{service.description}</p>
-                {!service.comingSoon && (
-                  <div className="mt-4 text-blue-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                    Klicken für mehr Details →
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              const isActive = activeIndex === index;
+              
+              return (
+                <div
+                  key={index}
+                  onClick={() => handleServiceClick(service)}
+                  className={`service-card group bg-gray-900/50 border rounded-xl p-6 transition-all duration-500 ${
+                    service.comingSoon 
+                      ? 'opacity-60 cursor-not-allowed border-gray-700' 
+                      : `cursor-pointer ${
+                          isActive 
+                            ? 'border-blue-500 shadow-2xl shadow-blue-500/30 scale-105 md:scale-100' 
+                            : 'border-gray-700 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-105'
+                        }`
+                  }`}
+                >
+                  <div className={`mb-4 transition-all duration-300 ${
+                    isActive ? 'text-blue-400 scale-110' : 'text-blue-400 group-hover:scale-110'
+                  }`}>
+                    <IconComponent size={48} strokeWidth={1.5} />
                   </div>
-                )}
-              </div>
-            ))}
+                  <h3 className={`text-xl font-bold mb-3 transition-colors ${
+                    service.comingSoon 
+                      ? 'text-gray-400' 
+                      : isActive 
+                        ? 'text-blue-400' 
+                        : 'group-hover:text-blue-400'
+                  }`}>
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400">{service.description}</p>
+                  {!service.comingSoon && (
+                    <div className={`mt-4 text-blue-400 text-sm font-semibold transition-opacity ${
+                      isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                    }`}>
+                      Mehr erfahren →
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

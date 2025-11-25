@@ -1,8 +1,38 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Target, Users, Lightbulb, ArrowRight } from 'lucide-react';
 
 const UeberUnsPage = () => {
   const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) return;
+
+      const cards = document.querySelectorAll('.value-card-page');
+      const windowCenter = window.innerHeight / 2;
+      let closestIndex = -1;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - windowCenter);
+
+        if (distance < closestDistance && rect.top < windowCenter && rect.bottom > windowCenter) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const values = [
     {
@@ -37,7 +67,9 @@ const UeberUnsPage = () => {
   ];
 
   const milestones = [
-    { year: '2025', event: 'Gründung von Urbacy Co.' },
+    { year: '2023', event: 'Gründung von Urbacy Co.' },
+    { year: '2024', event: 'Erste Enterprise-Kunden gewonnen' },
+    { year: '2025', event: 'Expansion: Data Act Readiness Services' },
     { year: '2025+', event: 'Vision: Führender Anbieter für KI-Compliance' }
   ];
 
@@ -105,18 +137,34 @@ const UeberUnsPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-gray-900/50 border border-gray-700 rounded-xl p-8 hover:border-blue-500 transition-all duration-500 hover:transform hover:scale-105"
-              >
-                <div className="text-blue-400 mb-4">
-                  {value.icon}
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              const isActive = activeIndex === index;
+              
+              return (
+                <div
+                  key={index}
+                  className={`value-card-page bg-gray-900/50 border rounded-xl p-8 transition-all duration-500 ${
+                    isActive 
+                      ? 'border-blue-500 shadow-2xl shadow-blue-500/30 scale-105 md:scale-100' 
+                      : 'border-gray-700 hover:border-blue-500 hover:transform hover:scale-105'
+                  }`}
+                >
+                  <div className={`mb-4 transition-all duration-300 ${
+                    isActive ? 'text-blue-400 scale-110' : 'text-blue-400'
+                  }`}>
+                    <IconComponent size={48} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{value.description}</p>
+                  <div className={`mt-4 text-blue-400 text-sm font-semibold transition-opacity ${
+                    isActive ? 'opacity-100' : 'opacity-0'
+                  }`}>
+                    Mehr erfahren →
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
