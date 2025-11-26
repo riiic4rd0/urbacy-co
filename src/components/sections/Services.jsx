@@ -126,24 +126,9 @@ const Services = () => {
     },
     {
       title: 'Automatisierung & APIs',
-      description: 'Integration von GPT, Twilio, Make.com & mehr',
+      description: 'Bald verfügbar',
       icon: Link2,
-      details: {
-        intro: 'Automatisieren Sie wiederkehrende Prozesse und integrieren Sie moderne APIs für maximale Effizienz.',
-        features: [
-          'Integration von ChatGPT/Claude in Ihre Systeme',
-          'Twilio-Anbindung für SMS/WhatsApp-Automation',
-          'Make.com/Zapier Workflow-Automatisierung',
-          'Custom API-Entwicklung',
-          'Datenbank-Integration & Synchronisation'
-        ],
-        benefits: [
-          'Zeitersparnis durch Automatisierung',
-          'Reduzierung manueller Fehler',
-          'Skalierbare Prozesse',
-          'Bessere Kundenkommunikation'
-        ]
-      }
+      comingSoon: true
     }
   ];
 

@@ -61,15 +61,13 @@ const UeberUnsPage = () => {
     {
       name: 'Ricardo Urban',
       role: 'Gründer & Geschäftsführer',
-      bio: 'Experte für Data Governance, DSGVO-Compliance und KI-Integration mit über 10 Jahren Erfahrung.',
+      bio: 'Experte für Data Governance, DSGVO-Compliance und KI-Integration.',
       expertise: ['Data Act', 'DSGVO', 'KI-Strategie', 'Prozessoptimierung']
     }
   ];
 
   const milestones = [
-    { year: '2023', event: 'Gründung von Urbacy Co.' },
-    { year: '2024', event: 'Erste Enterprise-Kunden gewonnen' },
-    { year: '2025', event: 'Expansion: Data Act Readiness Services' },
+    { year: '2025', event: 'Gründung von Urbacy Co.' },
     { year: '2025+', event: 'Vision: Führender Anbieter für KI-Compliance' }
   ];
 

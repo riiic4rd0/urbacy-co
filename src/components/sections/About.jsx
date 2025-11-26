@@ -1,7 +1,55 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Shield, Lightbulb } from 'lucide-react';
 
 const About = () => {
   const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) return; // Nur auf Mobile
+
+      const cards = document.querySelectorAll('.value-card');
+      const windowCenter = window.innerHeight / 2;
+      let closestIndex = -1;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - windowCenter);
+
+        if (distance < closestDistance && rect.top < windowCenter && rect.bottom > windowCenter) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const values = [
+    {
+      icon: Shield,
+      title: 'Transparenz & Datenschutz',
+      description: 'Klare Prozesse, dokumentiert und nachvollziehbar für maximale Rechtssicherheit.'
+    },
+    {
+      icon: Lightbulb,
+      title: 'Innovation & Effizienz',
+      description: 'Automatisierung und KI-Integration, die Ihre Prozesse wirklich unterstützt.'
+    }
+  ];
+
+  const handleCardClick = () => {
+    navigate('/ueber-uns');
+  };
 
   return (
     <section className="py-24 bg-gradient-to-b from-gray-800/50 to-gray-900 relative">
@@ -19,20 +67,35 @@ const About = () => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
-            <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-500 hover:transform hover:scale-105">
-              <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold mb-4">Transparenz & Datenschutz</h3>
-              <p className="text-gray-400">
-                Klare Prozesse, dokumentiert und nachvollziehbar für maximale Rechtssicherheit.
-              </p>
-            </div>
-            <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-700 hover:border-purple-500 transition-all duration-500 hover:transform hover:scale-105">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold mb-4">Innovation & Effizienz</h3>
-              <p className="text-gray-400">
-                Automatisierung und KI-Integration, die Ihre Prozesse wirklich unterstützt.
-              </p>
-            </div>
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              const isActive = activeIndex === index;
+              
+              return (
+                <div 
+                  key={index}
+                  onClick={handleCardClick}
+                  className={`value-card bg-gray-900/50 p-8 rounded-xl border transition-all duration-500 cursor-pointer ${
+                    isActive 
+                      ? 'border-blue-500 shadow-2xl shadow-blue-500/30 scale-105 md:scale-100' 
+                      : 'border-gray-700 hover:border-blue-500 hover:transform hover:scale-105'
+                  }`}
+                >
+                  <div className={`mb-4 transition-all duration-300 ${
+                    isActive ? 'text-blue-400 scale-110' : 'text-blue-400 group-hover:scale-110'
+                  }`}>
+                    <IconComponent size={48} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-400">{value.description}</p>
+                  <div className={`mt-4 text-blue-400 text-sm font-semibold transition-opacity ${
+                    isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}>
+                    Mehr erfahren →
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <button
