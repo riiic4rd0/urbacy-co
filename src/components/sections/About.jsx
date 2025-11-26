@@ -75,7 +75,7 @@ const About = () => {
                 <div 
                   key={index}
                   onClick={handleCardClick}
-                  className={`value-card bg-gray-900/50 p-8 rounded-xl border transition-all duration-500 cursor-pointer ${
+                  className={`value-card group bg-gray-900/50 p-8 rounded-xl border transition-all duration-500 cursor-pointer ${
                     isActive 
                       ? 'border-blue-500 shadow-2xl shadow-blue-500/30 scale-105 md:scale-100' 
                       : 'border-gray-700 hover:border-blue-500 hover:transform hover:scale-105'
