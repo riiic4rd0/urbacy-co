@@ -25,7 +25,7 @@ const ImpressumPage = () => {
                 <h2 className="text-2xl font-bold mb-4 text-blue-400">Kontakt</h2>
                 <div className="space-y-2 text-gray-300">
                   <p>Telefon: +49 (0) 123 456789</p>
-                  <p>E-Mail: <a href="mailto:info@urbacy.co" className="text-blue-400 hover:underline">info@urbacy.co</a></p>
+                  <p>E-Mail: <a href="mailto:urbacy.co@gmail.com" className="text-blue-400 hover:underline">info@urbacy.co</a></p>
                 </div>
               </section>
 
@@ -113,7 +113,7 @@ const ImpressumPage = () => {
               </section>
 
               <p className="text-sm text-gray-500 mt-8 pt-8 border-t border-gray-700">
-                Stand: November 2024
+                Stand: November 2025
               </p>
             </div>
           </div>
