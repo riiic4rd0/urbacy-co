@@ -17,8 +17,8 @@ const AGBPage = () => {
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend &quot;AGB&quot;) gelten für alle Verträge zwischen 
                   Urbacy Co. (nachfolgend &quot;Auftragnehmer&quot;) und dem Auftraggeber über die Erbringung von 
-                  Beratungsleistungen, insbesondere in den Bereichen Data Act Compliance, DSGVO, KI-Integration 
-                  und verwandten Dienstleistungen.
+                  Dienstleistungen im Bereich KI-Automatisierung, insbesondere die Implementierung und Betreuung von 
+                  E-Mail-, WhatsApp-, Webchat-, Telefon-KI und Prozess-Automatisierungen.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   (2) Abweichende oder ergänzende AGB des Auftraggebers werden nicht Vertragsbestandteil, es sei denn, 
@@ -37,53 +37,74 @@ const AGBPage = () => {
                   Beginn der Leistungserbringung zustande.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Änderungen und Ergänzungen des Vertrages bedürfen zu ihrer Wirksamkeit der Schriftform. 
-                  Dies gilt auch für die Abbedingung des Schriftformerfordernisses.
+                  (3) Änderungen und Ergänzungen des Vertrages bedürfen zu ihrer Wirksamkeit der Schriftform.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 3 Leistungsumfang</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Art und Umfang der zu erbringenden Leistungen ergeben sich aus der jeweiligen 
-                  Leistungsbeschreibung bzw. dem individuellen Angebot.
+                  (1) Der Auftragnehmer erbringt Dienstleistungen im Bereich KI-Automatisierung, insbesondere:
                 </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-300 mb-3">
+                  <li>Implementierung von KI-Automationsmodulen (E-Mail, WhatsApp, Webchat, Telefon)</li>
+                  <li>Konfiguration und Integration in bestehende Systeme</li>
+                  <li>Testing und Go-Live Begleitung</li>
+                  <li>Übergabe-Dokumentation und Schulung</li>
+                  <li>Optional: Laufende Betreuung und Monitoring</li>
+                </ul>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (2) Der Auftragnehmer erbringt seine Leistungen nach bestem Wissen und Gewissen unter 
-                  Beachtung der anerkannten fachlichen Grundsätze.
+                  (2) Der genaue Leistungsumfang ergibt sich aus der jeweiligen Leistungsbeschreibung bzw. dem Angebot.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   (3) Der Auftragnehmer ist berechtigt, zur Erfüllung seiner Leistungen qualifizierte 
-                  Subunternehmer einzusetzen.
+                  Subunternehmer und Drittanbieter-Tools (z.B. OpenAI, Make.com, Twilio) einzusetzen.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 4 Mitwirkungspflichten des Auftraggebers</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 4 Keine Rechtsberatung</h2>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (1) Der Auftragnehmer erbringt ausschließlich technische Dienstleistungen. 
+                  Die Leistungen umfassen keine Rechtsberatung, insbesondere keine Beratung zu DSGVO, 
+                  Data Act oder anderen rechtlichen Anforderungen.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (2) Optional kann der Auftragnehmer eine technisch-organisatorische Beratung anbieten, 
+                  die ausschließlich technische Empfehlungen und Risikoübersichten enthält. 
+                  Diese stellt keine Rechtsberatung dar.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  (3) Der Auftraggeber wird ausdrücklich darauf hingewiesen, bei rechtlichen Fragen 
+                  einen Rechtsanwalt oder Datenschutzbeauftragten zu konsultieren.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 5 Mitwirkungspflichten des Auftraggebers</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (1) Der Auftraggeber stellt dem Auftragnehmer alle für die Leistungserbringung erforderlichen 
-                  Informationen, Unterlagen und Daten vollständig und rechtzeitig zur Verfügung.
+                  Zugänge, Informationen und Daten vollständig und rechtzeitig zur Verfügung.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (2) Der Auftraggeber benennt einen kompetenten Ansprechpartner für alle projektrelevanten Fragen.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Verzögerungen oder Mehraufwand aufgrund mangelnder Mitwirkung des Auftraggebers berechtigen 
+                  (3) Verzögerungen aufgrund mangelnder Mitwirkung des Auftraggebers berechtigen 
                   den Auftragnehmer zur Anpassung von Terminen und Vergütung.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 5 Vergütung und Zahlungsbedingungen</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 6 Vergütung und Zahlungsbedingungen</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Die Vergütung richtet sich nach der vereinbarten Leistungsbeschreibung bzw. dem Angebot.
+                  (1) Die Vergütung richtet sich nach der vereinbarten Leistungsbeschreibung.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (2) Soweit nicht anders vereinbart, erfolgt die Abrechnung nach Aufwand auf Basis von 
-                  Stunden- oder Tagessätzen.
+                  (2) Einmalige Setup-Gebühren sind nach Auftragserteilung zur Zahlung fällig.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (3) Rechnungen sind innerhalb von 14 Tagen nach Rechnungsdatum ohne Abzug zur Zahlung fällig.
+                  (3) Monatliche Betreuungsgebühren sind im Voraus zum Monatsersten fällig.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   (4) Bei Zahlungsverzug ist der Auftragnehmer berechtigt, Verzugszinsen in Höhe von 9 Prozentpunkten 
@@ -92,56 +113,85 @@ const AGBPage = () => {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 6 Geheimhaltung und Datenschutz</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 7 Drittanbieter-Kosten</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit bekannt gewordenen 
-                  vertraulichen Informationen streng vertraulich zu behandeln und nur für die Vertragszwecke zu verwenden.
+                  (1) Für den Betrieb der KI-Systeme können Kosten durch Drittanbieter entstehen 
+                  (z.B. OpenAI API, Twilio, WhatsApp Business API).
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (2) Die Geheimhaltungsverpflichtung besteht auch nach Beendigung des Vertragsverhältnisses fort.
+                  (2) Diese Kosten trägt der Auftraggeber, sofern nicht anders vereinbart.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Die Verarbeitung personenbezogener Daten erfolgt gemäß den gesetzlichen Bestimmungen, 
-                  insbesondere der DSGVO. Bei Bedarf wird ein separater Auftragsverarbeitungsvertrag geschlossen.
+                  (3) Der Auftragnehmer informiert den Auftraggeber über zu erwartende Drittkosten 
+                  und richtet nach Möglichkeit Budget-Limits ein.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 7 Gewährleistung</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 8 Gewährleistung</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Der Auftragnehmer gewährleistet, dass seine Leistungen den anerkannten fachlichen Standards 
-                  entsprechen und mit der erforderlichen Sorgfalt erbracht werden.
+                  (1) Der Auftragnehmer gewährleistet, dass die Systeme nach anerkannten technischen Standards 
+                  implementiert werden und grundsätzlich funktionsfähig sind.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (2) Beratungsleistungen stellen Empfehlungen dar. Die Verantwortung für unternehmerische 
-                  Entscheidungen verbleibt beim Auftraggeber.
+                  (2) KI-Systeme können fehlerhafte oder unerwartete Ausgaben erzeugen. Der Auftragnehmer 
+                  übernimmt keine Haftung für Inhalte, die durch KI generiert werden.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (3) Bei technischen Mängeln hat der Auftraggeber Anspruch auf Nachbesserung. 
+                  Schlägt die Nachbesserung zweimal fehl, kann der Auftraggeber Minderung oder 
+                  Rücktritt vom Vertrag verlangen.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Mängelansprüche verjähren 12 Monate nach Abnahme bzw. Leistungserbringung.
+                  (4) Gewährleistungsansprüche verjähren 12 Monate nach Abnahme.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 8 Haftung</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 9 Haftung</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (1) Der Auftragnehmer haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers 
                   oder der Gesundheit sowie für Schäden aus vorsätzlichem oder grob fahrlässigem Verhalten.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (2) Für einfache Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher 
-                  Vertragspflichten. Die Haftung ist in diesem Fall auf den vertragstypischen, vorhersehbaren 
-                  Schaden begrenzt.
+                  Vertragspflichten. Die Haftung ist auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
                 </p>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (3) Der Auftragnehmer haftet nicht für Schäden durch:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-300 mb-3">
+                  <li>Fehlerhafte oder unerwartete KI-Ausgaben</li>
+                  <li>Ausfälle oder Fehler von Drittanbieter-Diensten (OpenAI, Twilio etc.)</li>
+                  <li>Unzureichende Mitwirkung des Auftraggebers</li>
+                  <li>Rechtliche Risiken aus KI-Nutzung (mangels Rechtsberatung)</li>
+                </ul>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Die Haftung für Datenverlust wird auf den typischen Wiederherstellungsaufwand beschränkt, 
-                  der bei regelmäßiger Anfertigung von Sicherungskopien eingetreten wäre.
+                  (4) Die Haftung ist pro Schadensfall auf die Höhe der Vertragssumme begrenzt, 
+                  maximal jedoch 10.000 Euro.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 9 Urheberrechte und Nutzungsrechte</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 10 Geheimhaltung und Datenschutz</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Alle vom Auftragnehmer erstellten Unterlagen, Dokumente und sonstigen Arbeitsergebnisse 
+                  (1) Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit bekannt gewordenen 
+                  vertraulichen Informationen streng vertraulich zu behandeln.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (2) Die Verarbeitung personenbezogener Daten erfolgt gemäß DSGVO. Bei Bedarf wird ein 
+                  separater Auftragsverarbeitungsvertrag geschlossen.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  (3) Der Auftraggeber ist für die rechtskonforme Nutzung der KI-Systeme selbst verantwortlich 
+                  und sollte dies durch einen Datenschutzbeauftragten oder Rechtsanwalt prüfen lassen.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 11 Urheberrechte und Nutzungsrechte</h2>
+                <p className="text-gray-300 leading-relaxed mb-3">
+                  (1) Alle vom Auftragnehmer erstellten Konfigurationen, Prompts und Dokumentationen 
                   bleiben geistiges Eigentum des Auftragnehmers.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
@@ -149,20 +199,19 @@ const AGBPage = () => {
                   zeitlich unbegrenztes Nutzungsrecht für den internen Gebrauch.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Eine Weitergabe an Dritte oder Veröffentlichung bedarf der vorherigen schriftlichen 
-                  Zustimmung des Auftragnehmers.
+                  (3) Eine Weitergabe an Dritte oder kommerzielle Weiterverwendung bedarf der vorherigen 
+                  schriftlichen Zustimmung des Auftragnehmers.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 10 Vertragslaufzeit und Kündigung</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 12 Vertragslaufzeit und Kündigung</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (1) Bei Projektverträgen endet das Vertragsverhältnis mit Abschluss des vereinbarten Projekts.
+                  (1) Bei einmaligen Implementierungsprojekten endet das Vertragsverhältnis mit Abnahme.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-3">
-                  (2) Bei laufenden Beratungsverträgen gilt die vereinbarte Vertragslaufzeit. Soweit keine 
-                  Laufzeit vereinbart ist, kann der Vertrag mit einer Frist von 4 Wochen zum Monatsende 
-                  gekündigt werden.
+                  (2) Bei laufenden Betreuungsverträgen gilt eine Mindestlaufzeit von 3 Monaten. 
+                  Danach kann der Vertrag mit einer Frist von 4 Wochen zum Monatsende gekündigt werden.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   (3) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.
@@ -170,7 +219,7 @@ const AGBPage = () => {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 11 Schlussbestimmungen</h2>
+                <h2 className="text-2xl font-bold mb-4 text-blue-400">§ 13 Schlussbestimmungen</h2>
                 <p className="text-gray-300 leading-relaxed mb-3">
                   (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
                 </p>
@@ -178,9 +227,8 @@ const AGBPage = () => {
                   (2) Erfüllungsort und Gerichtsstand ist, soweit gesetzlich zulässig, der Sitz des Auftragnehmers.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  (3) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit 
-                  der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, 
-                  die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.
+                  (3) Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen 
+                  Bestimmungen unberührt.
                 </p>
               </section>
 

@@ -20,26 +20,26 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-4 text-blue-400">Leistungen</h4>
+            <h4 className="font-bold mb-4 text-blue-400">Module</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <a href="/leistungen#data-act" className="hover:text-white transition-colors">
-                  Data Act Readiness
+                <a href="/leistungen#email-automation" className="hover:text-white transition-colors">
+                  E-Mail Automation
                 </a>
               </li>
               <li>
-                <a href="/leistungen#dsgvo" className="hover:text-white transition-colors">
-                  DSGVO-Compliance
+                <a href="/leistungen#whatsapp-automation" className="hover:text-white transition-colors">
+                  WhatsApp Automation
                 </a>
               </li>
               <li>
-                <a href="/leistungen#ki-integration" className="hover:text-white transition-colors">
-                  KI-Integration
+                <a href="/leistungen#webchat-automation" className="hover:text-white transition-colors">
+                  Webchat-KI
                 </a>
               </li>
               <li>
-                <a href="/leistungen#managed-services" className="hover:text-white transition-colors">
-                  Managed Services
+                <a href="/leistungen#telefon-automation" className="hover:text-white transition-colors">
+                  Telefon-KI
                 </a>
               </li>
             </ul>

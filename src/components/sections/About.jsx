@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Shield, Lightbulb } from 'lucide-react';
+import { Zap, Target } from 'lucide-react';
 
 const About = () => {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ const About = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth >= 768) return; // Nur auf Mobile
+      if (window.innerWidth >= 768) return;
 
       const cards = document.querySelectorAll('.value-card');
       const windowCenter = window.innerHeight / 2;
@@ -36,14 +36,14 @@ const About = () => {
 
   const values = [
     {
-      icon: Shield,
-      title: 'Transparenz & Datenschutz',
-      description: 'Klare Prozesse, dokumentiert und nachvollziehbar für maximale Rechtssicherheit.'
+      icon: Zap,
+      title: 'Einfachheit & Geschwindigkeit',
+      description: 'KI-Lösungen, die sofort funktionieren. Keine komplexen Setups, keine monatelange Implementierung.'
     },
     {
-      icon: Lightbulb,
-      title: 'Innovation & Effizienz',
-      description: 'Automatisierung und KI-Integration, die Ihre Prozesse wirklich unterstützt.'
+      icon: Target,
+      title: 'Praxisnah & Effizient',
+      description: 'Fokus auf messbare Zeitersparnis. Automatisierung, die wirklich Arbeit abnimmt.'
     }
   ];
 
@@ -62,8 +62,8 @@ const About = () => {
           </h2>
           
           <p className="text-xl text-gray-300 mb-12">
-            Urbacy Co. verbindet technisches Know-how und rechtliche Sensibilität. 
-            Unsere Lösungen sind praxisnah, sicher und EU-konform.
+            Urbacy Co. macht KI für kleine Unternehmen nutzbar — ohne technischen Aufwand, 
+            ohne lange Projektlaufzeiten. Einfach, schnell und bezahlbar.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
