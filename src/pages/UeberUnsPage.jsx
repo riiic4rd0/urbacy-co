@@ -208,17 +208,23 @@ const UeberUnsPage = () => {
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
-                <div className="text-3xl mb-4">⚡</div>
+                <div className="text-blue-400 mb-4">
+                  <Zap size={40} strokeWidth={1.5} />
+                </div>
                 <h3 className="text-xl font-bold mb-2">Schnell</h3>
                 <p className="text-gray-400">Live in Tagen, nicht Monaten</p>
               </div>
               <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
-                <div className="text-3xl mb-4">💰</div>
+                <div className="text-blue-400 mb-4">
+                  <Target size={40} strokeWidth={1.5} />
+                </div>
                 <h3 className="text-xl font-bold mb-2">Bezahlbar</h3>
                 <p className="text-gray-400">Ab 390€ starten</p>
               </div>
               <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
-                <div className="text-3xl mb-4">🎯</div>
+                <div className="text-blue-400 mb-4">
+                  <Lightbulb size={40} strokeWidth={1.5} />
+                </div>
                 <h3 className="text-xl font-bold mb-2">Pragmatisch</h3>
                 <p className="text-gray-400">Nur was wirklich hilft</p>
               </div>
