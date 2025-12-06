@@ -97,7 +97,7 @@ const Hero = ({ onNavigate }) => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Wir automatisieren Ihre Kommunikation mit KI — E-Mail, WhatsApp, Webchat & Telefon. Schnell, sicher und kosteneffizient.
+              Wir automatisieren Ihre Kommunikation mit KI, schnell, sicher und kosteneffizient.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
