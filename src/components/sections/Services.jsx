@@ -132,66 +132,70 @@ const Services = () => {
     }
   ];
 
-  const ModuleModal = ({ module, onClose }) => (
-    <div 
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
+  const ModuleModal = ({ module, onClose }) => {
+    const IconComponent = module.icon;
+    
+    return (
       <div 
-        className="bg-gray-900 border-2 border-blue-500 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        onClick={onClose}
       >
-        <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 flex items-start justify-between">
-          <div className="flex items-center gap-4">
-            <module.icon size={40} className="text-blue-400" />
-            <div>
-              <h3 className="text-3xl font-bold text-white">{module.title}</h3>
-              <p className="text-gray-400 mt-1">{module.description}</p>
+        <div 
+          className="bg-gray-900 border-2 border-blue-500 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 flex items-start justify-between">
+            <div className="flex items-center gap-4">
+              <IconComponent size={40} className="text-blue-400" />
+              <div>
+                <h3 className="text-3xl font-bold text-white">{module.title}</h3>
+                <p className="text-gray-400 mt-1">{module.description}</p>
+              </div>
             </div>
-          </div>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-          >
-            <X size={24} />
-          </button>
-        </div>
-
-        <div className="p-6 space-y-6">
-          <p className="text-gray-300 leading-relaxed text-lg">
-            {module.details.intro}
-          </p>
-
-          <div>
-            <h4 className="text-xl font-bold mb-4 text-blue-400">Was wir liefern:</h4>
-            <ul className="space-y-3">
-              {module.details.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="text-green-400 mt-1">✓</span>
-                  <span className="text-gray-300">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-blue-300">
-              <strong>Ergebnis:</strong> {module.details.result}
-            </p>
-          </div>
-
-          <div className="pt-6 border-t border-gray-700">
             <button
               onClick={onClose}
-              className="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+              className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
             >
-              Schließen
+              <X size={24} />
             </button>
+          </div>
+
+          <div className="p-6 space-y-6">
+            <p className="text-gray-300 leading-relaxed text-lg">
+              {module.details.intro}
+            </p>
+
+            <div>
+              <h4 className="text-xl font-bold mb-4 text-blue-400">Was wir liefern:</h4>
+              <ul className="space-y-3">
+                {module.details.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+              <p className="text-blue-300">
+                <strong>Ergebnis:</strong> {module.details.result}
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-gray-700">
+              <button
+                onClick={onClose}
+                className="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+              >
+                Schließen
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <>
@@ -251,131 +255,6 @@ const Services = () => {
         />
       )}
     </>
-  );
-};
-
-export default Services;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth >= 768) return;
-
-      const cards = document.querySelectorAll('.service-card');
-      const windowCenter = window.innerHeight / 2;
-      let closestIndex = -1;
-      let closestDistance = Infinity;
-
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(cardCenter - windowCenter);
-
-        if (distance < closestDistance && rect.top < windowCenter && rect.bottom > windowCenter) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      setActiveIndex(closestIndex);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const services = [
-    {
-      title: 'E-Mail Automation',
-      description: 'Priorisierung, Canned Responses, Follow-Ups',
-      icon: Mail,
-      anchor: '#email-automation'
-    },
-    {
-      title: 'WhatsApp Automation',
-      description: 'API-Bot, FAQ, Terminbuchung',
-      icon: MessageSquare,
-      anchor: '#whatsapp-automation'
-    },
-    {
-      title: 'Webchat-KI',
-      description: 'Website-Chat mit KI-Backend',
-      icon: MessageCircle,
-      anchor: '#webchat-automation'
-    },
-    {
-      title: 'Telefon-KI',
-      description: 'Anrufannahme, Terminbuchung, Gesprächszusammenfassungen',
-      icon: Phone,
-      anchor: '#telefon-automation'
-    },
-    {
-      title: 'Interner Assistent',
-      description: 'Recherche, Angebotserstellung, Prozess-Support',
-      icon: Bot,
-      anchor: '#interner-assistent'
-    },
-    {
-      title: 'CRM-Verknüpfung',
-      description: 'Automatische Lead-Erstellung & Status-Updates',
-      icon: Workflow,
-      anchor: '#crm-automation'
-    }
-  ];
-
-  const handleServiceClick = (service) => {
-    window.location.href = `/leistungen${service.anchor}`;
-  };
-
-  return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-gray-800/50 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(30,136,229,0.05),transparent_50%)]" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Unsere KI-Module</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Wählen Sie die Module, die Ihren Arbeitsalltag vereinfachen
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            const isActive = activeIndex === index;
-            
-            return (
-              <div
-                key={index}
-                onClick={() => handleServiceClick(service)}
-                className={`service-card group bg-gray-900/50 border rounded-xl p-6 transition-all duration-500 cursor-pointer ${
-                  isActive 
-                    ? 'border-blue-500 shadow-2xl shadow-blue-500/30 scale-105 md:scale-100' 
-                    : 'border-gray-700 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-105'
-                }`}
-              >
-                <div className={`mb-4 transition-all duration-300 ${
-                  isActive ? 'text-blue-400 scale-110' : 'text-blue-400 group-hover:scale-110'
-                }`}>
-                  <IconComponent size={48} strokeWidth={1.5} />
-                </div>
-                <h3 className={`text-xl font-bold mb-3 transition-colors ${
-                  isActive ? 'text-blue-400' : 'group-hover:text-blue-400'
-                }`}>
-                  {service.title}
-                </h3>
-                <p className="text-gray-400">{service.description}</p>
-                <div className={`mt-4 text-blue-400 text-sm font-semibold transition-opacity ${
-                  isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                }`}>
-                  Mehr erfahren →
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
   );
 };
 
